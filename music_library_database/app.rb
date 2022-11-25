@@ -14,3 +14,5 @@ end
 album_repository.all.each do |album|
   p album
 end
+
+p album_repository.find(3)

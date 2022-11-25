@@ -113,6 +113,10 @@ class AlbumRepository
     # Returns an array of Album objects.
   end
 
+  def find(id)
+    # Performs a SELECT query and returns a single Album object. (depending on the id)
+  end
+
 end
 ```
 
@@ -140,6 +144,16 @@ albums.first.artist_id # => '1'
 repo = AlbumRepository.new
 #(all albums are removed after set up)
 albums = repo.all # => []
+
+#3
+# Returns a single Album object that corresponds with the id requested
+
+repo = AlbumRepository.new
+album = repo.find(3)
+
+album.title # => 'Smoke + Mirrors'
+album.release_year # => 2014
+album.artist_id # => 2
 
 
 # EXAMPLES for ARTISTS

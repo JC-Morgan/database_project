@@ -45,4 +45,14 @@ describe AlbumRepository do
     expect(albums).to eq []
   end
 
+  it " Returns a single Album object that corresponds with the id requested" do
+
+    repo = AlbumRepository.new
+    album = repo.find(3)
+
+    expect(album.title).to eq "Smoke + Mirrors"
+    expect(album.release_year).to eq "2014"
+    expect(album.artist_id).to eq "2"
+  end
+
 end
