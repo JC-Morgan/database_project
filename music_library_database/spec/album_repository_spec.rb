@@ -1,4 +1,5 @@
 require 'album_repository'
+require 'album'
 
 describe AlbumRepository do
 
@@ -53,6 +54,24 @@ describe AlbumRepository do
     expect(album.title).to eq "Smoke + Mirrors"
     expect(album.release_year).to eq "2014"
     expect(album.artist_id).to eq "2"
+  end
+
+  it "Adds an album to the database when the create method is used" do
+
+    repo = AlbumRepository.new
+    album = Album.new
+
+    album.title = 'Trompe le Monde'
+    album.release_year = 1991
+    album.artist_id = 1
+
+    repo.create(album)
+    albums = repo.all
+
+    expect(albums.last.title).to eq "Trompe le Monde"
+    expect(albums.last.release_year).to eq "1991"
+    expect(albums.last.artist_id).to eq "1"
+
   end
 
 end

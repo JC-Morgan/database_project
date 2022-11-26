@@ -152,8 +152,25 @@ repo = AlbumRepository.new
 album = repo.find(3)
 
 album.title # => 'Smoke + Mirrors'
-album.release_year # => 2014
-album.artist_id # => 2
+album.release_year # => '2014'
+album.artist_id # => '2'
+
+#4
+# Adds an album to the database when the create method is used
+
+repo = AlbumRepository.new
+album = Album.new
+
+album.title = 'Trompe le Monde'
+album.release_year = 1991
+album.artist_id = 1
+
+repo.create(album)
+albums = repo.all
+
+albums.last.title # => "Trompe le Monde"
+albums.last.release_year # => "1991"
+albums.last.artist_id # => "1"
 
 
 # EXAMPLES for ARTISTS
