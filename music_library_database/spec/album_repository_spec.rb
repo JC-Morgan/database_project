@@ -1,5 +1,6 @@
 require 'album_repository'
 require 'album'
+require 'spec_helper'
 
 describe AlbumRepository do
 
@@ -12,7 +13,6 @@ describe AlbumRepository do
   before(:each) do
     reset_albums_table
   end
-
 
   it "returns all albums" do
 

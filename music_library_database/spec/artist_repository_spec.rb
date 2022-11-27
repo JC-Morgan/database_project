@@ -1,4 +1,5 @@
 require 'artist_repository'
+require 'spec_helper'
 
 describe ArtistRepository do
 

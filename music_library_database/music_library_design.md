@@ -117,6 +117,10 @@ class AlbumRepository
     # Performs a SELECT query and returns a single Album object. (depending on the id)
   end
 
+  def create(album)
+    # Adds an album (album) to the database.
+  end
+
 end
 ```
 
